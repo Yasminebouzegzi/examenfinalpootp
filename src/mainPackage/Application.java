@@ -1,9 +1,12 @@
 package mainPackage;
+import mainPackage.Views.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		JFrame fenetre = new JFrame();
 
 	}
 
