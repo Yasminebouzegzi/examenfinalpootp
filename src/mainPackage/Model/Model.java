@@ -126,22 +126,22 @@ public class Model {
 				this.etat = etat;
 			}
 		}
-	class Client {
+	public class Client {
 		private String nomclient;
 		private String prenomclient;
 		private int codepostaleclient;
-		private String adresseclient;
+		//private String adresseclient;
 		private int numerotlphnclient;
-		private int motdepassclient;
+	//	private int motdepassclient;
 		public Client(String nomclient, String prenomclient, int codepostaleclient, String adresseclient,
 				int numerotlphnclient, int motdepassclient) {
 			super();
 			this.nomclient = nomclient;
 			this.prenomclient = prenomclient;
 			this.codepostaleclient = codepostaleclient;
-			this.adresseclient = adresseclient;
+		//	this.adresseclient = adresseclient;
 			this.numerotlphnclient = numerotlphnclient;
-			this.motdepassclient = motdepassclient;
+	//	this.motdepassclient = motdepassclient;
 		}
 		public String getNomclient() {
 			return nomclient;
@@ -161,27 +161,44 @@ public class Model {
 		public void setCodepostaleclient(int codepostaleclient) {
 			this.codepostaleclient = codepostaleclient;
 		}
-		public String getAdresseclient() {
-			return adresseclient;
-		}
-		public void setAdresseclient(String adresseclient) {
-			this.adresseclient = adresseclient;
-		}
+	
 		public int getNumerotlphnclient() {
 			return numerotlphnclient;
 		}
 		public void setNumerotlphnclient(int numerotlphnclient) {
 			this.numerotlphnclient = numerotlphnclient;
 		}
-		public int getMotdepassclient() {
-			return motdepassclient;
-		}
-		public void setMotdepassclient(int motdepassclient) {
-			this.motdepassclient = motdepassclient;
-		}
+		
 	}
 	
 	class Administrateur {
+		String nom,prenom;
+		int modepasse;
+		public Administrateur(String nom, String prenom, int modepasse) {
+			super();
+			this.nom = nom;
+			this.prenom = prenom;
+			this.modepasse = modepasse;
+		}
+		public String getNom() {
+			return nom;
+		}
+		public void setNom(String nom) {
+			this.nom = nom;
+		}
+		public String getPrenom() {
+			return prenom;
+		}
+		public void setPrenom(String prenom) {
+			this.prenom = prenom;
+		}
+		public int getModepasse() {
+			return modepasse;
+		}
+		public void setModepasse(int modepasse) {
+			this.modepasse = modepasse;
+		}
+		
 		
 	}
 	

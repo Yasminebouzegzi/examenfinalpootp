@@ -8,6 +8,7 @@ public class Application {
 	public static void main(String[] args) {
 		JFrame fenetre = new JFrame();
 
+		System.out.print("yasmine");
 	}
 
 }

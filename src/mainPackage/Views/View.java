@@ -21,7 +21,7 @@ import javax.swing.JButton;
 import java.util.EventListener;
 public class View {
 
-	private JFrame frame;
+	JFrame frame;
 	private JPasswordField passwordField;
 	private JTextField textField;
 	private JTextField textField_1;
