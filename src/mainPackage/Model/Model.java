@@ -1,11 +1,13 @@
 package mainPackage.Model;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Model {
 	enum typechambre{
 		chambresimple, chambredouble,chambretwin,suite;
 	}
 	enum Etatreservation {
-		enattente, confirmée, annulée;
+		 confirmée, annulée;
 	}
 	class Date{
 		int jour;
@@ -40,7 +42,7 @@ public class Model {
 	
 	class Chambre {
 		private int numerochambre;
-		private typechambre typechambre;
+		typechambre typechambre;
 		boolean dispnible;
 		
 		
@@ -197,11 +199,14 @@ public class Model {
 		}
 		public void setModepasse(int modepasse) {
 			this.modepasse = modepasse;
-		}
-		
-		
+		}	
 	}
 	
+	    private Map<Integer, typechambre> mapchambres = new HashMap<>(Map.of(00, typechambre.chambredouble, 01, typechambre.chambredouble, 02, typechambre.chambresimple, 03,typechambre.chambresimple,04,typechambre.chambretwin,05,typechambre.chambretwin,06,typechambre.suite,07,typechambre.suite));
+	    private Map<Integer, Reservation> mapreservations = new HashMap<>();
+	    private Map<String, Client> mapClient = new HashMap<>();
+	      
+
 	
 
 }

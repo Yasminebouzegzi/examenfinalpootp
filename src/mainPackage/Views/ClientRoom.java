@@ -1,5 +1,5 @@
 package mainPackage.Views;
-
+import java.sql.*; 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -103,7 +103,19 @@ public class ClientRoom {
 		JButton btnNewButton = new JButton("Confirmer");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
+				int response = JOptionPane.showConfirmDialog(
+			            frame, // La fenêtre parente
+			            "Êtes-vous sûr de vouloir confirmer ?", // Le message de confirmation
+			            "Confirmation", // Le titre de la boîte de dialogue
+			            JOptionPane.YES_NO_OPTION, // Le type d'options (Oui / Non)
+			            JOptionPane.QUESTION_MESSAGE // Le type de message
+			        );
+			        
+			        // Gérer la réponse de l'utilisateur
+			        if (response == JOptionPane.YES_OPTION) {
+			            frame.dispose(); 
+				
+			}}
 		});
 		btnNewButton.setBounds(219, 387, 140, 23);
 		panel_1.add(btnNewButton);
