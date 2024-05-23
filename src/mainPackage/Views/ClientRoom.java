@@ -19,6 +19,9 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import mainPackage.Controllers.Control;
+import mainPackage.Model.Model;
+
 public class ClientRoom {
 
 	private JFrame frame;
@@ -46,6 +49,8 @@ public class ClientRoom {
 	public ClientRoom() {
 		initialize();
 	}
+	private Control control;
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -66,7 +71,7 @@ public class ClientRoom {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("                                  Nom Client");
+		JLabel lblNewLabel_2 = new JLabel("                      Votre Numero de telphone ");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_2.setBounds(41, 11, 318, 31);
 		panel_1.add(lblNewLabel_2);
@@ -112,10 +117,14 @@ public class ClientRoom {
 			        );
 			        
 			        // Gérer la réponse de l'utilisateur
-			        if (response == JOptionPane.YES_OPTION) {
-			            frame.dispose(); 
-				
-			}}
+				 if (response == JOptionPane.YES_OPTION) {
+	                    String numeroTelephone = textField.getText();
+	                    String typeChambre = (String) comboBox.getSelectedItem();
+	                
+					control.ajouterReservation(numeroTelephone, typeChambre);
+	                    frame.dispose();
+	                }
+			        }
 		});
 		btnNewButton.setBounds(219, 387, 140, 23);
 		panel_1.add(btnNewButton);
@@ -149,5 +158,9 @@ public class ClientRoom {
 		lblNewLabel.setIcon(new ImageIcon(ClientRoom.class.getResource("/mainPackage/Views/stock-photo--d-rendering-modern-bedroom-suite-in-hotel-with-tv-and-work-table-1537688963.jpg")));
 		lblNewLabel.setBounds(-115, 0, 851, 513);
 		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setBounds(0, 0, 46, 14);
+		panel.add(lblNewLabel_5);
 	}
 }

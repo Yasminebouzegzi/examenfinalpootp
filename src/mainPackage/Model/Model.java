@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Model {
-	enum typechambre{
+	public enum typechambre{
 		chambresimple, chambredouble,chambretwin,suite;
 	}
 	enum Etatreservation {
@@ -41,8 +41,8 @@ public class Model {
 	}
 	
 	class Chambre {
-		private int numerochambre;
-		typechambre typechambre;
+		public int numerochambre;
+		public typechambre typechambre;
 		boolean dispnible;
 		
 		
@@ -74,12 +74,12 @@ public class Model {
 		
 		
 	class Reservation {
-			private int idreservation;
-			private String nomclient;
-			private Date datedebut;
-			private Date datefin;
-			private Chambre chambre;
-			private Etatreservation etat ;
+			public int idreservation;
+			public String nomclient;
+			public Date datedebut;
+			public Date datefin;
+			public Chambre chambre;
+			public Etatreservation etat ;
 			
 			public Reservation(int idreservation, String nomclient, Date datedebut, Date datefin, Chambre chambre,
 					Etatreservation etat) {
@@ -129,11 +129,11 @@ public class Model {
 			}
 		}
 	public class Client {
-		private String nomclient;
-		private String prenomclient;
-		private int codepostaleclient;
+		public String nomclient;
+		public String prenomclient;
+		public int codepostaleclient;
 		//private String adresseclient;
-		private int numerotlphnclient;
+		public int numerotlphnclient;
 	//	private int motdepassclient;
 		public Client(String nomclient, String prenomclient, int codepostaleclient, String adresseclient,
 				int numerotlphnclient, int motdepassclient) {
@@ -202,9 +202,15 @@ public class Model {
 		}	
 	}
 	
-	    private Map<Integer, typechambre> mapchambres = new HashMap<>(Map.of(00, typechambre.chambredouble, 01, typechambre.chambredouble, 02, typechambre.chambresimple, 03,typechambre.chambresimple,04,typechambre.chambretwin,05,typechambre.chambretwin,06,typechambre.suite,07,typechambre.suite));
-	    private Map<Integer, Reservation> mapreservations = new HashMap<>();
-	    private Map<String, Client> mapClient = new HashMap<>();
+	public Model() {
+        // Initialiser mapReservations avec 0 réservations pour chaque type de chambre
+        for (typechambre type : typechambre.values()) {
+            mapreservations.put(type, 0);
+        }
+    }
+	public Map<Integer, typechambre> mapchambres = new HashMap<>(Map.of(00, typechambre.chambredouble, 01, typechambre.chambredouble, 02, typechambre.chambresimple, 03,typechambre.chambresimple,04,typechambre.chambretwin,05,typechambre.chambretwin,06,typechambre.suite,07,typechambre.suite));
+	public Map<typechambre, Integer> mapreservations = new HashMap<>();
+	public Map<Integer, typechambre> mapClient = new HashMap<>();
 	      
 
 	
