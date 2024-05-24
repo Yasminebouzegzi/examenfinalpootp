@@ -143,7 +143,7 @@ public class ClientRoom {
             }
         });
 		
-		btnNewButton.setBounds(202, 334, 157, 23);
+		btnNewButton.setBounds(202, 332, 157, 23);
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Annuler");
@@ -163,17 +163,29 @@ public class ClientRoom {
 			        }
 			}
 		});
-		btnNewButton_1.setBounds(27, 334, 157, 23);
+		btnNewButton_1.setBounds(27, 332, 151, 23);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voire ma reservation ");
 		btnNewButton_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 showReservations();
-            }
+             }
         });
-		btnNewButton_2.setBounds(27, 413, 332, 31);
+		btnNewButton_2.setBounds(27, 381, 332, 31);
 		panel_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Terminé !");
+		 btnNewButton_3.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                View view = new View();
+	                view.frame.setVisible(true);
+	                frame.dispose();
+	            }
+	        });
+		
+		btnNewButton_3.setBounds(27, 433, 332, 23);
+		panel_1.add(btnNewButton_3);
 		
 		JLabel lblNewLabel_1 = new JLabel("ENTREZ VOTRE RESERVATION");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 23));
@@ -203,7 +215,4 @@ public class ClientRoom {
 
 		        JOptionPane.showMessageDialog(frame, scrollPane, "Liste des Réservations", JOptionPane.INFORMATION_MESSAGE);
 		    }
-		
-		
-	
 }
