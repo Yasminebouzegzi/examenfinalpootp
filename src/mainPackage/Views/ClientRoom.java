@@ -130,18 +130,21 @@ public class ClientRoom {
 		panel_1.add(formattedTextField_1);
 		
 		JButton btnNewButton = new JButton("Confirmer");
-		btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String numeroTelephone = textField.getText();
-                String typeChambre = (String) comboBox.getSelectedItem();
-                if (numeroTelephone.isEmpty() || typeChambre == null) {
-                    JOptionPane.showMessageDialog(frame, "Veuillez remplir tous les champs.", "Erreur", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    control.ajouterReservation(numeroTelephone, typeChambre);
-                    JOptionPane.showMessageDialog(frame, "Réservation avec succès, veillez attendre une confirmation.", "Succès", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        });
+		   btnNewButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                String numeroTelephone = textField.getText();
+	                String typeChambre = (String) comboBox.getSelectedItem();
+	                if (numeroTelephone.isEmpty() || typeChambre == null) {
+	                    JOptionPane.showMessageDialog(frame, "Veuillez remplir tous les champs.", "Erreur", JOptionPane.ERROR_MESSAGE);
+	                } else {
+	                    // Convertir le type de chambre en enum
+	                    Model.typechambre typeChambreEnum = Model.typechambre.valueOf(typeChambre.toLowerCase().replace(" ", ""));
+	                    // Ajouter la réservation à mapClient
+	                    model.mapClient.put(Integer.parseInt(numeroTelephone), typeChambreEnum);
+	                    JOptionPane.showMessageDialog(frame, "Réservation avec succès, veuillez attendre une confirmation.", "Succès", JOptionPane.INFORMATION_MESSAGE);
+	                }
+	            }
+	        });
 		
 		btnNewButton.setBounds(202, 332, 157, 23);
 		panel_1.add(btnNewButton);
