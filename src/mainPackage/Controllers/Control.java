@@ -6,6 +6,15 @@ import mainPackage.Model.Model;
 import mainPackage.Model.Model.typechambre;
 import mainPackage.Views.ClientRoom;
 public class Control {
+	Model model;
+
+    public Control(Model model) {
+        this.model = model;
+    }
+
+    public Model getModel() {
+        return model;
+    }
 	 
 	public static void action(ClientWindow clientWindow) {
 		String nom = clientWindow.getNom();
@@ -23,11 +32,9 @@ public class Control {
 		System.out.println("Code postal: " + client.getCodepostaleclient());
 	}
 	
-	 Model model;
+	 
 
-    public Control(Model model) {
-        this.model = model;
-    }
+   
     
    //pour remplir mapclient
     public void ajouterReservation(String numeroTelephone, String typeChambreStr) {
@@ -101,6 +108,7 @@ public class Control {
             System.out.println("Type de chambre invalide.");
         }
     }
-    
+
+	
 	
 }
